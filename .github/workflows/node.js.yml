@@ -9,7 +9,7 @@ jobs:
   my_build_job:
     runs-on: ubuntu-lastest
     steps:
-      - uses: actions/checout@v3
+      - uses: actions/checkout@v3
       - name: npm install, test and build
         run: |
           npm install
