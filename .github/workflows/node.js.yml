@@ -1,0 +1,29 @@
+name:   CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  my_build_job:
+    runs-on: ubuntu-lastest
+    steps:
+      - uses: actions/checout@v3
+
+      - name: npm install, test and build
+        run: |
+          npm install
+          npm run build
+
+        - name: Run a one-line script
+          run: echo Hello, world!
+
+        - name: Run a multi-line script
+          run: |
+            echo Add other actions to build,
+            echo test, and deploy your project.
+
+        - name: Run JS file for test
+          run: node js/script.js
